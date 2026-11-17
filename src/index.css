@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-50 text-ink-900 antialiased font-sans;
+    min-height: 100vh;
+  }
+}
+
+/* Background orbits aesthetic */
+.hero-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(61, 111, 208, 0.18) 0%, rgba(7, 26, 69, 0) 70%);
+}
+
+.hero-dark {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, #0a2160 0%, #071a45 100%);
+}

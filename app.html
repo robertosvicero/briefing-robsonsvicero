@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefing de Aplicativo Web</title>
+  <meta name="description" content="Briefing para criação de aplicativo web. Conte-nos sobre o seu projeto." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero_orbits" aria-hidden="true"></div>
+    <div class="container hero_content">
+      <span class="eyebrow eyebrow--light">Briefing de projeto</span>
+      <h1>Vamos construir o seu <em>app web</em></h1>
+      <p class="lead">Responda às perguntas abaixo para que possamos entender seus objetivos, público e necessidades. Leva cerca de 10 minutos e você pode pular o que não souber.</p>
+      <a href="#briefing" class="btn btn--primary btn--lg">Começar briefing <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </header>
+
+  <main id="briefing" class="section">
+    <div class="container container--narrow">
+
+      <a href="index.html" class="back-link">← Trocar tipo de projeto</a>
+
+      <!-- Progresso -->
+      <div class="progress" aria-hidden="true">
+        <div class="progress_bar" id="progressBar"></div>
+      </div>
+      <p class="progress_label" id="progressLabel">Etapa 1 de 6</p>
+
+      <form id="briefingForm" action="https://formspree.io/f/xbdevbne" method="POST" data-storage="briefing_app_draft" novalidate>
+
+        <input type="hidden" name="_subject" value="Novo briefing de APP WEB" />
+        <input type="hidden" name="tipo_briefing" value="App Web" />
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+
+        <!-- ETAPA 1 -->
+        <fieldset class="step is-active" data-step="1">
+          <span class="eyebrow">01 · Sobre você</span>
+          <h2>Quem é você e sua empresa?</h2>
+
+          <div class="grid">
+            <div class="field">
+              <label for="nome">Nome completo <span class="req">*</span></label>
+              <input type="text" id="nome" name="nome" required />
+              <small class="error">Informe seu nome.</small>
+            </div>
+            <div class="field">
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required />
+              <small class="error">Informe um e-mail válido.</small>
+            </div>
+            <div class="field">
+              <label for="telefone">WhatsApp / Telefone <span class="req">*</span></label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+              <small class="error">Informe um telefone válido.</small>
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa / Marca</label>
+              <input type="text" id="empresa" name="empresa" />
+            </div>
+            <div class="field">
+              <label for="cargo">Seu cargo</label>
+              <input type="text" id="cargo" name="cargo" />
+            </div>
+            <div class="field">
+              <label for="site">Site ou rede social atual</label>
+              <input type="text" id="site" name="site" placeholder="https://" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="negocio">Descreva brevemente o seu negócio <span class="req">*</span></label>
+            <textarea id="negocio" name="negocio" rows="4" required></textarea>
+            <small class="error">Conte um pouco sobre o seu negócio.</small>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 2 -->
+        <fieldset class="step" data-step="2">
+          <span class="eyebrow">02 · O projeto</span>
+          <h2>O que o app precisa resolver?</h2>
+
+          <div class="field">
+            <label for="nome_projeto">Nome do projeto (ou provisório)</label>
+            <input type="text" id="nome_projeto" name="nome_projeto" />
+          </div>
+
+          <div class="field">
+            <label for="problema">Qual problema o app vai resolver? <span class="req">*</span></label>
+            <textarea id="problema" name="problema" rows="4" required></textarea>
+            <small class="error">Descreva o problema principal.</small>
+          </div>
+
+          <div class="field">
+            <label for="objetivo">Qual o principal objetivo do app? <span class="req">*</span></label>
+            <textarea id="objetivo" name="objetivo" rows="3" required></textarea>
+            <small class="error">Descreva o objetivo.</small>
+          </div>
+
+          <div class="field">
+            <span class="label">Tipo de aplicação</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="Plataforma / SaaS" /><span>Plataforma / SaaS</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="Painel administrativo" /><span>Painel administrativo</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="Marketplace" /><span>Marketplace</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="E-commerce" /><span>E-commerce</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="Agendamento" /><span>Agendamento</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="Área de membros / cursos" /><span>Área de membros / cursos</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="CRM / Gestão" /><span>CRM / Gestão</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_app[]" value="Outro" /><span>Outro</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="concorrentes">Concorrentes ou referências (links)</label>
+            <textarea id="concorrentes" name="concorrentes" rows="3" placeholder="Um por linha. O que você gosta ou não gosta em cada um?"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 3 -->
+        <fieldset class="step" data-step="3">
+          <span class="eyebrow">03 · Público e usuários</span>
+          <h2>Quem vai usar o app?</h2>
+
+          <div class="field">
+            <label for="publico">Descreva o público-alvo <span class="req">*</span></label>
+            <textarea id="publico" name="publico" rows="4" placeholder="Perfil, idade, profissão, nível de familiaridade com tecnologia…" required></textarea>
+            <small class="error">Descreva o público-alvo.</small>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="qtd_usuarios">Estimativa de usuários (primeiro ano)</label>
+              <select id="qtd_usuarios" name="qtd_usuarios">
+                <option value="">Selecione</option>
+                <option>Até 100</option>
+                <option>100 a 1.000</option>
+                <option>1.000 a 10.000</option>
+                <option>Mais de 10.000</option>
+                <option>Não sei estimar</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="perfis">Perfis de acesso</label>
+              <input type="text" id="perfis" name="perfis" placeholder="Ex.: administrador, cliente, atendente" />
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label">Principais dispositivos de uso</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="dispositivos[]" value="Celular" /><span>Celular</span></label>
+              <label class="chip"><input type="checkbox" name="dispositivos[]" value="Desktop" /><span>Desktop</span></label>
+              <label class="chip"><input type="checkbox" name="dispositivos[]" value="Tablet" /><span>Tablet</span></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 4 -->
+        <fieldset class="step" data-step="4">
+          <span class="eyebrow">04 · Funcionalidades</span>
+          <h2>O que o app precisa fazer?</h2>
+
+          <div class="field">
+            <span class="label">Funcionalidades desejadas</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Login e cadastro" /><span>Login e cadastro</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Perfis e permissões" /><span>Perfis e permissões</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Dashboard e relatórios" /><span>Dashboard e relatórios</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Pagamentos online" /><span>Pagamentos online</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Assinaturas recorrentes" /><span>Assinaturas recorrentes</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Notificações (e-mail/push)" /><span>Notificações (e-mail/push)</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Chat / mensagens" /><span>Chat / mensagens</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Upload de arquivos" /><span>Upload de arquivos</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Busca e filtros" /><span>Busca e filtros</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Agenda / calendário" /><span>Agenda / calendário</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Mapas / geolocalização" /><span>Mapas / geolocalização</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Inteligência artificial" /><span>Inteligência artificial</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Multi-idioma" /><span>Multi-idioma</span></label>
+              <label class="chip"><input type="checkbox" name="funcionalidades[]" value="Funciona como PWA (instalável)" /><span>PWA (instalável)</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="funcionalidades_essenciais">Liste as 3 a 5 funcionalidades mais importantes (MVP) <span class="req">*</span></label>
+            <textarea id="funcionalidades_essenciais" name="funcionalidades_essenciais" rows="4" required></textarea>
+            <small class="error">Liste as funcionalidades essenciais.</small>
+          </div>
+
+          <div class="field">
+            <label for="integracoes">Integrações necessárias</label>
+            <textarea id="integracoes" name="integracoes" rows="3" placeholder="Ex.: Stripe, Mercado Pago, WhatsApp, Google Calendar, ERP, API de terceiros…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="sistema_existente">Existe sistema ou planilha atual que será substituído?</label>
+            <textarea id="sistema_existente" name="sistema_existente" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 5 -->
+        <fieldset class="step" data-step="5">
+          <span class="eyebrow">05 · Design e identidade</span>
+          <h2>Como o app deve parecer?</h2>
+
+          <div class="field">
+            <span class="label">Você já possui identidade visual?</span>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="identidade" value="Sim, completa" /><span>Sim, completa</span></label>
+              <label class="radio"><input type="radio" name="identidade" value="Parcial (só logo)" /><span>Parcial (só logo)</span></label>
+              <label class="radio"><input type="radio" name="identidade" value="Não possuo" /><span>Não possuo</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="referencias_visuais">Links de referências visuais</label>
+            <textarea id="referencias_visuais" name="referencias_visuais" rows="3" placeholder="Sites e apps cujo visual você admira"></textarea>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="cores">Cores preferidas</label>
+              <input type="text" id="cores" name="cores" placeholder="Ex.: azul e branco" />
+            </div>
+            <div class="field">
+              <label for="estilo">Estilo desejado</label>
+              <select id="estilo" name="estilo">
+                <option value="">Selecione</option>
+                <option>Moderno e minimalista</option>
+                <option>Corporativo e sério</option>
+                <option>Amigável e acolhedor</option>
+                <option>Ousado e criativo</option>
+                <option>Elegante e sofisticado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label">Modo de tema</span>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="tema" value="Claro" /><span>Claro</span></label>
+              <label class="radio"><input type="radio" name="tema" value="Escuro" /><span>Escuro</span></label>
+              <label class="radio"><input type="radio" name="tema" value="Ambos" /><span>Ambos</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="link_arquivos">Link para logo e materiais (Drive, Dropbox…)</label>
+            <input type="url" id="link_arquivos" name="link_arquivos" placeholder="https://" />
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 6 -->
+        <fieldset class="step" data-step="6">
+          <span class="eyebrow">06 · Prazo e investimento</span>
+          <h2>Quando e com que orçamento?</h2>
+
+          <div class="grid">
+            <div class="field">
+              <label for="prazo">Prazo desejado para lançamento</label>
+              <select id="prazo" name="prazo">
+                <option value="">Selecione</option>
+                <option>Até 1 mês</option>
+                <option>1 a 3 meses</option>
+                <option>3 a 6 meses</option>
+                <option>Mais de 6 meses</option>
+                <option>Sem prazo definido</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="orcamento">Faixa de investimento</label>
+              <select id="orcamento" name="orcamento">
+                <option value="">Selecione</option>
+                <option>Até R$ 10 mil</option>
+                <option>R$ 10 mil a R$ 30 mil</option>
+                <option>R$ 30 mil a R$ 80 mil</option>
+                <option>Acima de R$ 80 mil</option>
+                <option>Preciso de uma estimativa</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="dominio">Já possui domínio e hospedagem?</label>
+            <input type="text" id="dominio" name="dominio" placeholder="Ex.: sim, domínio no Registro.br" />
+          </div>
+
+          <div class="field">
+            <label for="manutencao">Precisa de manutenção e suporte após o lançamento?</label>
+            <select id="manutencao" name="manutencao">
+              <option value="">Selecione</option>
+              <option>Sim, contínuo</option>
+              <option>Apenas no início</option>
+              <option>Não</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="sucesso">Como saberemos que o projeto foi um sucesso?</label>
+            <textarea id="sucesso" name="sucesso" rows="3" placeholder="Métricas, metas, resultados esperados…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="observacoes">Algo mais que devemos saber?</label>
+            <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="lgpd" name="consentimento_lgpd" value="Sim" required />
+            <span>Autorizo o uso das informações acima para elaboração de proposta e contato comercial, conforme a LGPD. <span class="req">*</span></span>
+          </label>
+          <small class="error" id="lgpdError">É necessário aceitar para enviar.</small>
+        </fieldset>
+
+        <!-- Navegação -->
+        <div class="actions">
+          <button type="button" class="btn btn--outline btn--md" id="btnPrev" hidden>← Voltar</button>
+          <button type="button" class="btn btn--primary btn--md" id="btnNext">Próximo <span class="arrow" aria-hidden="true">→</span></button>
+          <button type="submit" class="btn btn--primary btn--md" id="btnSubmit" hidden>
+            <span class="btn_label">Enviar briefing</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Sucesso -->
+      <div class="success" id="successBox" hidden>
+        <div class="success_icon" aria-hidden="true">✓</div>
+        <h2>Briefing enviado com sucesso!</h2>
+        <p class="lead">Obrigado pelas informações. Vamos analisar tudo com carinho e retornar em breve com os próximos passos.</p>
+        <button type="button" class="btn btn--outline btn--md" id="btnNew">Preencher novo briefing</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer_inner">
+      <p>© <span id="year"></span> Todos os direitos reservados.</p>
+      <p>Suas informações são confidenciais e usadas apenas para este projeto.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

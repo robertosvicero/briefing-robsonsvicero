@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefing de Site</title>
+  <meta name="description" content="Briefing para criação de site. Conte-nos sobre o seu projeto." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero_orbits" aria-hidden="true"></div>
+    <div class="container hero_content">
+      <span class="eyebrow eyebrow--light">Briefing de projeto</span>
+      <h1>Vamos criar o seu <em>site</em></h1>
+      <p class="lead">Responda às perguntas abaixo para que possamos entender seus objetivos, público e necessidades. Leva cerca de 10 minutos e você pode pular o que não souber.</p>
+      <a href="#briefing" class="btn btn--primary btn--lg">Começar briefing <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </header>
+
+  <main id="briefing" class="section">
+    <div class="container container--narrow">
+
+      <a href="index.html" class="back-link">← Trocar tipo de projeto</a>
+
+      <div class="progress" aria-hidden="true">
+        <div class="progress_bar" id="progressBar"></div>
+      </div>
+      <p class="progress_label" id="progressLabel">Etapa 1 de 6</p>
+
+      <form id="briefingForm" action="https://formspree.io/f/xbdevbne" method="POST" data-storage="briefing_site_draft" novalidate>
+
+        <input type="hidden" name="_subject" value="Novo briefing de SITE" />
+        <input type="hidden" name="tipo_briefing" value="Site" />
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+
+        <!-- ETAPA 1 -->
+        <fieldset class="step is-active" data-step="1">
+          <span class="eyebrow">01 · Sobre você</span>
+          <h2>Quem é você e sua empresa?</h2>
+
+          <div class="grid">
+            <div class="field">
+              <label for="nome">Nome completo <span class="req">*</span></label>
+              <input type="text" id="nome" name="nome" required />
+              <small class="error">Informe seu nome.</small>
+            </div>
+            <div class="field">
+              <label for="email">E-mail <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required />
+              <small class="error">Informe um e-mail válido.</small>
+            </div>
+            <div class="field">
+              <label for="telefone">WhatsApp / Telefone <span class="req">*</span></label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required />
+              <small class="error">Informe um telefone válido.</small>
+            </div>
+            <div class="field">
+              <label for="empresa">Empresa / Marca</label>
+              <input type="text" id="empresa" name="empresa" />
+            </div>
+            <div class="field">
+              <label for="cargo">Seu cargo</label>
+              <input type="text" id="cargo" name="cargo" />
+            </div>
+            <div class="field">
+              <label for="site_atual">Site ou rede social atual</label>
+              <input type="text" id="site_atual" name="site_atual" placeholder="https://" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="negocio">Descreva brevemente o seu negócio <span class="req">*</span></label>
+            <textarea id="negocio" name="negocio" rows="4" required></textarea>
+            <small class="error">Conte um pouco sobre o seu negócio.</small>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 2 -->
+        <fieldset class="step" data-step="2">
+          <span class="eyebrow">02 · O projeto</span>
+          <h2>Qual o propósito do site?</h2>
+
+          <div class="field">
+            <span class="label">Tipo de site</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Institucional" /><span>Institucional</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Landing page" /><span>Landing page</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Portfólio" /><span>Portfólio</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Blog / conteúdo" /><span>Blog / conteúdo</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Loja virtual" /><span>Loja virtual</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Catálogo de produtos" /><span>Catálogo de produtos</span></label>
+              <label class="chip"><input type="checkbox" name="tipo_site[]" value="Outro" /><span>Outro</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="objetivo">Qual o principal objetivo do site? <span class="req">*</span></label>
+            <textarea id="objetivo" name="objetivo" rows="3" placeholder="Ex.: gerar contatos, vender online, apresentar a empresa…" required></textarea>
+            <small class="error">Descreva o objetivo.</small>
+          </div>
+
+          <div class="field">
+            <label for="acao_principal">Qual ação o visitante deve realizar?</label>
+            <input type="text" id="acao_principal" name="acao_principal" placeholder="Ex.: chamar no WhatsApp, preencher formulário, comprar" />
+          </div>
+
+          <div class="field">
+            <label for="diferencial">Qual o diferencial do seu negócio?</label>
+            <textarea id="diferencial" name="diferencial" rows="3"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="concorrentes">Concorrentes ou referências (links)</label>
+            <textarea id="concorrentes" name="concorrentes" rows="3" placeholder="Um por linha. O que você gosta ou não gosta em cada um?"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 3 -->
+        <fieldset class="step" data-step="3">
+          <span class="eyebrow">03 · Público e conteúdo</span>
+          <h2>Para quem e com qual conteúdo?</h2>
+
+          <div class="field">
+            <label for="publico">Descreva o público-alvo <span class="req">*</span></label>
+            <textarea id="publico" name="publico" rows="4" placeholder="Perfil, idade, região, necessidades…" required></textarea>
+            <small class="error">Descreva o público-alvo.</small>
+          </div>
+
+          <div class="field">
+            <span class="label">Páginas desejadas</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Home" /><span>Home</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Sobre" /><span>Sobre</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Serviços" /><span>Serviços</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Produtos" /><span>Produtos</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Portfólio / Cases" /><span>Portfólio / Cases</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Depoimentos" /><span>Depoimentos</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Blog" /><span>Blog</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="FAQ" /><span>FAQ</span></label>
+              <label class="chip"><input type="checkbox" name="paginas[]" value="Contato" /><span>Contato</span></label>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="textos">Quem fornecerá os textos?</label>
+              <select id="textos" name="textos">
+                <option value="">Selecione</option>
+                <option>Eu mesmo(a)</option>
+                <option>Preciso de redação</option>
+                <option>Já tenho prontos</option>
+                <option>Ainda não sei</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="imagens">Quem fornecerá as imagens?</label>
+              <select id="imagens" name="imagens">
+                <option value="">Selecione</option>
+                <option>Eu mesmo(a)</option>
+                <option>Usar banco de imagens</option>
+                <option>Preciso de fotografia</option>
+                <option>Ainda não sei</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="paginas_extra">Detalhes sobre a estrutura do site</label>
+            <textarea id="paginas_extra" name="paginas_extra" rows="3" placeholder="Seções importantes, hierarquia do menu, outras páginas…"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 4 -->
+        <fieldset class="step" data-step="4">
+          <span class="eyebrow">04 · Funcionalidades</span>
+          <h2>O que o site precisa ter?</h2>
+
+          <div class="field">
+            <span class="label">Recursos desejados</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Formulário de contato" /><span>Formulário de contato</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Botão de WhatsApp" /><span>Botão de WhatsApp</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Galeria de fotos / vídeos" /><span>Galeria de fotos / vídeos</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Blog com painel" /><span>Blog com painel</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Loja / pagamento online" /><span>Loja / pagamento online</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Agendamento online" /><span>Agendamento online</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Área restrita / login" /><span>Área restrita / login</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Newsletter" /><span>Newsletter</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Mapa / localização" /><span>Mapa / localização</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Chat / chatbot" /><span>Chat / chatbot</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="Multi-idioma" /><span>Multi-idioma</span></label>
+              <label class="chip"><input type="checkbox" name="recursos[]" value="SEO otimizado" /><span>SEO otimizado</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="integracoes">Integrações necessárias</label>
+            <textarea id="integracoes" name="integracoes" rows="3" placeholder="Ex.: Google Analytics, Meta Pixel, RD Station, Mailchimp, CRM…"></textarea>
+          </div>
+
+          <div class="field">
+            <span class="label">Você precisa atualizar o conteúdo sozinho(a)?</span>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="autonomia" value="Sim, com painel administrativo" /><span>Sim, com painel</span></label>
+              <label class="radio"><input type="radio" name="autonomia" value="Não, a equipe atualiza" /><span>Não, a equipe atualiza</span></label>
+              <label class="radio"><input type="radio" name="autonomia" value="Ainda não sei" /><span>Ainda não sei</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="observacoes_func">Alguma funcionalidade específica não listada?</label>
+            <textarea id="observacoes_func" name="observacoes_func" rows="3"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 5 -->
+        <fieldset class="step" data-step="5">
+          <span class="eyebrow">05 · Design e identidade</span>
+          <h2>Como o site deve parecer?</h2>
+
+          <div class="field">
+            <span class="label">Você já possui identidade visual?</span>
+            <div class="radios">
+              <label class="radio"><input type="radio" name="identidade" value="Sim, completa" /><span>Sim, completa</span></label>
+              <label class="radio"><input type="radio" name="identidade" value="Parcial (só logo)" /><span>Parcial (só logo)</span></label>
+              <label class="radio"><input type="radio" name="identidade" value="Não possuo" /><span>Não possuo</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="referencias_visuais">Links de sites cujo visual você admira</label>
+            <textarea id="referencias_visuais" name="referencias_visuais" rows="3"></textarea>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label for="cores">Cores preferidas</label>
+              <input type="text" id="cores" name="cores" placeholder="Ex.: azul e branco" />
+            </div>
+            <div class="field">
+              <label for="estilo">Estilo desejado</label>
+              <select id="estilo" name="estilo">
+                <option value="">Selecione</option>
+                <option>Moderno e minimalista</option>
+                <option>Corporativo e sério</option>
+                <option>Amigável e acolhedor</option>
+                <option>Ousado e criativo</option>
+                <option>Elegante e sofisticado</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="link_arquivos">Link para logo e materiais (Drive, Dropbox…)</label>
+            <input type="url" id="link_arquivos" name="link_arquivos" placeholder="https://" />
+          </div>
+        </fieldset>
+
+        <!-- ETAPA 6 -->
+        <fieldset class="step" data-step="6">
+          <span class="eyebrow">06 · Prazo e investimento</span>
+          <h2>Quando e com que orçamento?</h2>
+
+          <div class="grid">
+            <div class="field">
+              <label for="prazo">Prazo desejado para publicação</label>
+              <select id="prazo" name="prazo">
+                <option value="">Selecione</option>
+                <option>Até 2 semanas</option>
+                <option>2 a 4 semanas</option>
+                <option>1 a 3 meses</option>
+                <option>Mais de 3 meses</option>
+                <option>Sem prazo definido</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="orcamento">Faixa de investimento</label>
+              <select id="orcamento" name="orcamento">
+                <option value="">Selecione</option>
+                <option>Até R$ 3 mil</option>
+                <option>R$ 3 mil a R$ 8 mil</option>
+                <option>R$ 8 mil a R$ 20 mil</option>
+                <option>Acima de R$ 20 mil</option>
+                <option>Preciso de uma estimativa</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="dominio">Já possui domínio e hospedagem?</label>
+            <input type="text" id="dominio" name="dominio" placeholder="Ex.: sim, domínio no Registro.br" />
+          </div>
+
+          <div class="field">
+            <label for="manutencao">Precisa de manutenção após a publicação?</label>
+            <select id="manutencao" name="manutencao">
+              <option value="">Selecione</option>
+              <option>Sim, mensal</option>
+              <option>Apenas no início</option>
+              <option>Não</option>
+              <option>Ainda não sei</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="sucesso">Como saberemos que o projeto foi um sucesso?</label>
+            <textarea id="sucesso" name="sucesso" rows="3" placeholder="Métricas, metas, resultados esperados…"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="observacoes">Algo mais que devemos saber?</label>
+            <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="lgpd" name="consentimento_lgpd" value="Sim" required />
+            <span>Autorizo o uso das informações acima para elaboração de proposta e contato comercial, conforme a LGPD. <span class="req">*</span></span>
+          </label>
+          <small class="error" id="lgpdError">É necessário aceitar para enviar.</small>
+        </fieldset>
+
+        <div class="actions">
+          <button type="button" class="btn btn--outline btn--md" id="btnPrev" hidden>← Voltar</button>
+          <button type="button" class="btn btn--primary btn--md" id="btnNext">Próximo <span class="arrow" aria-hidden="true">→</span></button>
+          <button type="submit" class="btn btn--primary btn--md" id="btnSubmit" hidden>
+            <span class="btn_label">Enviar briefing</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="success" id="successBox" hidden>
+        <div class="success_icon" aria-hidden="true">✓</div>
+        <h2>Briefing enviado com sucesso!</h2>
+        <p class="lead">Obrigado pelas informações. Vamos analisar tudo com carinho e retornar em breve com os próximos passos.</p>
+        <button type="button" class="btn btn--outline btn--md" id="btnNew">Preencher novo briefing</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer_inner">
+      <p>© <span id="year"></span> Todos os direitos reservados.</p>
+      <p>Suas informações são confidenciais e usadas apenas para este projeto.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

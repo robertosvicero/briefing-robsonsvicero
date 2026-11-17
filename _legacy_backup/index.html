@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Briefing de Projeto</title>
+  <meta name="description" content="Escolha o tipo de projeto e responda ao briefing." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero hero--full">
+    <div class="hero_orbits" aria-hidden="true"></div>
+    <div class="container hero_content">
+      <span class="eyebrow eyebrow--light">Briefing de projeto</span>
+      <h1>Vamos começar o seu <em>projeto</em></h1>
+      <p class="lead">Selecione abaixo o tipo de projeto que você deseja criar. Em seguida, você responderá a um briefing específico para ele.</p>
+
+      <div class="selector">
+        <label for="tipoProjeto" class="selector_label">Que tipo de projeto você quer criar?</label>
+        <div class="selector_row">
+          <select id="tipoProjeto" aria-describedby="tipoHint">
+            <option value="">Selecione uma opção</option>
+            <option value="app.html">Aplicativo web (app)</option>
+            <option value="site.html">Site</option>
+          </select>
+          <button type="button" class="btn btn--primary btn--md" id="btnContinuar" disabled>
+            Continuar <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+        <p class="selector_hint" id="tipoHint">Leva cerca de 10 minutos e você pode pular o que não souber.</p>
+      </div>
+    </div>
+  </header>
+
+  <footer class="footer">
+    <div class="container footer_inner">
+      <p>© <span id="year"></span> Todos os direitos reservados.</p>
+      <p>Suas informações são confidenciais e usadas apenas para este projeto.</p>
+    </div>
+  </footer>
+
+  <script src="selector.js"></script>
+</body>
+</html>
